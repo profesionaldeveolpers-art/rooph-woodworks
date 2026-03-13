@@ -1,0 +1,135 @@
+:root {
+  --bg: #f4eee7;
+  --card: rgba(255,255,255,0.78);
+  --text: #161616;
+  --muted: #5f5f5f;
+  --accent: #5a3b24;
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.85), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(0,0,0,0.04), transparent 28%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(760px, 100%);
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: min(240px, 60vw);
+  height: auto;
+  display: block;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  margin: 16px 0 12px;
+  font-weight: 600;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 22px;
+}
+
+.architects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.architects span {
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.72);
+  font-size: 0.96rem;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  text-align: center;
+  font-weight: 600;
+  background: white;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.15);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 680px) {
+  .card { padding: 24px; border-radius: 24px; }
+  .actions { grid-template-columns: 1fr; }
+  .architects { flex-direction: column; }
+  .architects span { width: 100%; text-align: center; }
+}
